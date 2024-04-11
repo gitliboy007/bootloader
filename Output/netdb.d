@@ -1,0 +1,15 @@
+..\..\output\netdb.o: ..\..\Middlewares\LWIP\src\api\netdb.c
+..\..\output\netdb.o: ..\..\Middlewares\lwip\src\include\lwip/netdb.h
+..\..\output\netdb.o: ..\..\Middlewares\lwip\src\include\lwip/opt.h
+..\..\output\netdb.o: ..\..\Middlewares\lwip\arch\lwipopts.h
+..\..\output\netdb.o: ..\..\Middlewares\lwip\src\include\lwip/debug.h
+..\..\output\netdb.o: ..\..\Middlewares\lwip\src\include\lwip/arch.h
+..\..\output\netdb.o: ..\..\Middlewares\lwip\arch/cc.h
+..\..\output\netdb.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\..\output\netdb.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\..\output\netdb.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+..\..\output\netdb.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\..\output\netdb.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+..\..\output\netdb.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+..\..\output\netdb.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
+..\..\output\netdb.o: ..\..\Middlewares\lwip\src\include\lwip/opt.h

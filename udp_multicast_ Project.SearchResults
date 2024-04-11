@@ -1,0 +1,3 @@
+---- low_level_output Matches (2 in 1 files) ----
+ethernetif.c (Middlewares\lwip\arch) line 145 : low_level_output(struct netif *netif, struct pbuf *p)
+ethernetif_init in ethernetif.c (Middlewares\lwip\arch) :     netif->linkoutput = low_level_output;
