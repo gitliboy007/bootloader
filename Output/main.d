@@ -74,8 +74,6 @@
 ..\..\output\main.o: ..\..\Drivers\./BSP/LED/led.h
 ..\..\output\main.o: ..\..\Drivers\./BSP/LCD/lcd.h
 ..\..\output\main.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\..\output\main.o: ..\..\Middlewares\./USMART/usmart.h
-..\..\output\main.o: ..\..\Middlewares\./USMART/usmart_port.h
 ..\..\output\main.o: ..\..\Drivers\./BSP/KEY/key.h
 ..\..\output\main.o: ..\..\Middlewares\./MALLOC/malloc.h
 ..\..\output\main.o: ..\..\Drivers\./BSP/TIMER/btim.h

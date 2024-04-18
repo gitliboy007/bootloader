@@ -23,7 +23,7 @@
 #include "./SYSTEM/delay/delay.h"
 #include "./BSP/LED/led.h"
 #include "./BSP/LCD/lcd.h"
-#include "./USMART/usmart.h"
+//#include "./USMART/usmart.h"
 #include "./BSP/KEY/key.h"
 #include "./MALLOC/malloc.h"
 #include "./BSP/TIMER/btim.h"
@@ -37,7 +37,7 @@ int main(void)
     sys_stm32_clock_init(336, 8, 2, 7); /* 设置时钟,168Mhz */
     delay_init(168);                    /* 延时初始化 */
     usart_init(115200);                 /* 串口初始化为115200 */
-    usmart_dev.init(84);                /* 初始化USMART */
+   // usmart_dev.init(84);                /* 初始化USMART */
     led_init();                         /* 初始化LED */
     //lcd_init();                         /* 初始化LCD */
     //key_init();                         /* 初始化按键 */

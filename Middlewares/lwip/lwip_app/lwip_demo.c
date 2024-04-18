@@ -408,29 +408,29 @@ void lwip_demo(void)
 				
 			
 				recnum = socket_info->recv.buf[3];
-				recnum = (recnum << 8) + socket_info->recv.buf[4];
-				if((num == recnum)&&(socket_info->recv.buf[0] == 0x62))
+				recnum = (recnum << 8) + socket_info->recv.buf[4];  // 2byte num buf[3],[4]
+				if((num == recnum)&&(socket_info->recv.buf[0] == 0x62))  //0x62 head + 2byte num + 512byte data display received data length
 				{
 					recnum = socket_info->recv.buf[3];
 					recnum = (recnum << 8) + socket_info->recv.buf[4];
 					if((recnum % 2) == 1)
 					{
 						rec_num = recnum/2;
-						printf("received: %d kByte!\r\n", rec_num);
+						printf("received: %d kByte!\r\n", rec_num); //display received data length
 						
 						//strcat((char)g_lwip_demo_sendbuf,(char)ntohs(rec_num/2));
 						//strcat((char*)g_lwip_demo_sendbuf," kByte received!\r\n");
 					}
 #if FLASH_WR_ON 
-					IAP_FlashWritSome(&socket_info->recv.buf[5],512,APP_START_ADDR + (num-1) * 512);
+					IAP_FlashWritSome(&socket_info->recv.buf[5],512,APP_START_ADDR + (num-1) * 512);  //write data to flash 512byte
 #endif
 					num++;
 				}
-				else if(socket_info->recv.buf[0] == 0x61)
+				else if(socket_info->recv.buf[0] == 0x61) // jump
 				{
 					
 				}
-				else if((socket_info->recv.buf[0] == 'E')&&(length == 5))
+				else if((socket_info->recv.buf[0] == 'E')&&(length == 5)) //erase command "E"+ length = 5;
 				{
 					rec_num = 1;
 					printf("Erase Flashing !\r\n");
@@ -444,16 +444,19 @@ void lwip_demo(void)
 					FLASH_Erase_Sector(GetSector(0x08020000),FLASH_VOLTAGE_RANGE_3);
 					FLASH_Erase_Sector(GetSector(0x08040000),FLASH_VOLTAGE_RANGE_3);
 
-					HAL_FLASH_Lock();  //¶ÁFLASH²»ÐèÒªFLASH´¦ÓÚ½âËø×´Ì¬¡
+					HAL_FLASH_Lock();  //¶ÁFLASH²»ÐèÒªFLASH´¦ÓÚ½âËø×´Ì¬?
 					//delay_ms(1000);
 					//printf("Erase completed!\r\n");					
 #else 
-					delay_ms(2000);
+					delay_ms(2000); //delay 2s
 #endif					
 					printf("Erase completed!\r\n");	
 					rec_num  = 2;
 				}
-				else
+				else  //other data  break the program app
+        {
+          rec_num = 0;
+        }
 				{
 #if FLASH_WR_ON 	
 //					HAL_FLASH_Unlock(); //½âËøFLASHºó²ÅÄÜÏòFLASHÖÐÐ´Êý¾Ý¡£
@@ -470,7 +473,7 @@ void lwip_demo(void)
 				}
 					
 			
-				if((g_lwip_demo_recvbuf[0] == 0x62)&&(recnum > 0)&&((length < (512+5)||(length == 5))))
+				if((g_lwip_demo_recvbuf[0] == 0x62)&&(recnum > 0)&&((length < (512+5)||(length == 5)))) //jump app
 				{	
 					rec_num = 0xffff;
 					vTaskDelay(500);

@@ -561,31 +561,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Middlewares/USMART</GroupName>
-          <Files>
-            <File>
-              <FileName>usmart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Middlewares\USMART\usmart.c</FilePath>
-            </File>
-            <File>
-              <FileName>usmart_port.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Middlewares\USMART\usmart_port.c</FilePath>
-            </File>
-            <File>
-              <FileName>usmart_config.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Middlewares\USMART\usmart_config.c</FilePath>
-            </File>
-            <File>
-              <FileName>usmart_str.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Middlewares\USMART\usmart_str.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>Middlewares/MALLOC</GroupName>
           <Files>
             <File>
